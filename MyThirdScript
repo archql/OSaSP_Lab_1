@@ -1,0 +1,19 @@
+#!/bin/bash
+# check args
+if [ $# -ne 2 ]
+then
+	echo "Error: Wrong args. Formatt is: [source file] [output filename]"
+	exit
+fi
+# compile
+gcc $1 -o $2".exe"
+# check
+if [ $? -ne 0 ]
+then
+	echo "Compilation error! Closing.."
+	exit
+fi
+echo "Compilation success! Exucuting.."
+# execute
+./$2".exe"
+# end

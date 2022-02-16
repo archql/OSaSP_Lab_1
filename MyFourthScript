@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ $# -ne 2 ]
+then 
+	echo "Usage: command [str to find] [start dir]"
+	exit
+fi
+find $2 -type f -exec grep -l $1 {} \; -exec wc -c {} \;| sort -n | grep ^[0-9]
+

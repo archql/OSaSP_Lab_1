@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "Num of args passed: "$# # its amount of args
+if ! [ "$#" -ge 3 ]
+then
+	echo "Error! Bad params! Formatt is: cmd [output file] [extension] [path from search executed]"
+	exit
+fi
+if ! [ -d "$3" ]
+then
+	echo "Error! Bad param! 3rd param is: [path from search executed]" >&2 # redirect to thread num 2 (error)
+	exit
+fi
+if ! [[ $2 =~ ^\. ]]
+then
+	echo "Error! Bad param! 2rd param is: [extension]" >&2 # redirect to thread num 2 (error)
+	exit
+fi
+
+# code here	
+ls -1 *$2
+ls -1 *$2 > ./"$1"
+echo "Error code: " $?

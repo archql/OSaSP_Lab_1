@@ -1,0 +1,7 @@
+#!/bin/bash
+# This is my first script!
+echo "This is my first script!"
+echo $@
+echo $@ > MyFirstScript.out.txt 
+# '>' is redirection operator 
+#(single == owerwrite, double == append)S
