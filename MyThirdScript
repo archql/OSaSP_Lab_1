@@ -2,7 +2,13 @@
 # check args
 if [ $# -ne 2 ]
 then
-	echo "Error: Wrong args. Formatt is: [source file] [output filename]"
+	echo "Usage: [c lang source file] [output filename]"
+	exit
+fi
+# check if input file exists
+if ! [ -f $1 ] || ! [[ $1 =~ \.c$ ]]
+then
+	echo "Error: Wrong arg. 1st arg is [c lang source file]">&2
 	exit
 fi
 # compile
@@ -10,7 +16,7 @@ gcc $1 -o $2".exe"
 # check
 if [ $? -ne 0 ]
 then
-	echo "Compilation error! Closing.."
+	echo "Compilation error! Closing..">&2
 	exit
 fi
 echo "Compilation success! Exucuting.."

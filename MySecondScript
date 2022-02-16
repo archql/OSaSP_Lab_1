@@ -2,7 +2,7 @@
 echo "Num of args passed: "$# # its amount of args
 if ! [ "$#" -ge 3 ]
 then
-	echo "Error! Bad params! Formatt is: cmd [output file] [extension] [path from search executed]"
+	echo "Usage: cmd [output file] [extension] [path from search executed]"
 	exit
 fi
 if ! [ -d "$3" ]
@@ -10,9 +10,15 @@ then
 	echo "Error! Bad param! 3rd param is: [path from search executed]" >&2 # redirect to thread num 2 (error)
 	exit
 fi
+# File can not exist!
+#if ! [ -f "$1" ]
+#then
+#	echo "Error! Bad param! 1st param is: [output file]" >&2 # redirect to thread num 2 (error)
+#	exit
+#fi
 if ! [[ $2 =~ ^\. ]]
 then
-	echo "Error! Bad param! 2rd param is: [extension]" >&2 # redirect to thread num 2 (error)
+	echo "Error! Bad param! 2nd param is: [extension]" >&2 # redirect to thread num 2 (error)
 	exit
 fi
 
