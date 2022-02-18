@@ -2,6 +2,9 @@
 
 Here is Lab 1 of OSaSP BSUIR subject
 
+Group no 051004 (1st half)
+Author: Artiom Drankevich (@archql)
+
 Progress report & task is inside .docx files
 
 Warning! One of the tasks were to create ~/\<group no\>/\<student credentials\> folder.

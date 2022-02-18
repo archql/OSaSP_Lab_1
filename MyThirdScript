@@ -23,3 +23,6 @@ echo "Compilation success! Exucuting.."
 # execute
 ./$2".exe"
 # end
+
+#alternative variant (w/out error echo)
+# gcc $1 -o $2".exe" && { ./$2".exe"; echo "Compilation success! Exucuting..";  }
